@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SignListComponent } from './sign-list/sign-list.component';
+import { SignComponent } from './sign/sign.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignListComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,
