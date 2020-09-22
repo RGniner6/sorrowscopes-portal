@@ -1,0 +1,22 @@
+.card-list {
+  display: flex;
+  padding: 3rem;
+}
+
+.card {
+  transition: .3s;
+
+  &:hover {
+    transform: translateY(-1rem);
+
+    // Selects all '.card' siblings except the current, prev cards
+    &~.card {
+      transform: translateX(100px);
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: -100px;
+  }
+}
+

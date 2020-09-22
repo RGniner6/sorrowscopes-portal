@@ -1,0 +1,11 @@
+<article class="card">
+  <header class="card-header">
+    <p class="date-range">{{ sign.dateRange }}</p>
+    <h2 class="name">{{ sign.signName }}</h2>
+<!--    <img *ngIf="sign.diagram" src="{{sign.diagram}}" alt="Illustration of zodiac sign, {{ sign.signName }}">-->
+  </header>
+  <div class="diagram">
+    <img class="diagram" src="assets/diagrams/{{sign.signName.toLowerCase()}}.svg" alt="Illustration of zodiac sign, {{
+ sign.signName }}">
+  </div>
+</article>
