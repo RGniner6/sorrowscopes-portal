@@ -4,7 +4,8 @@ import {SignListComponent} from "./components/sign-list/sign-list.component";
 
 
 const routes: Routes = [
-  {path: '', component: SignListComponent}
+  {path: '', component: SignListComponent},
+  {path: '/:signName', component: SignListComponent},
 ];
 
 @NgModule({
