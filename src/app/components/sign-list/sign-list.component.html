@@ -1,6 +1,6 @@
 
 <div class="card-list">
   <div class="card" *ngFor="let sign of signList">
-    <app-sign [sign]="sign"></app-sign>
+    <app-sign [sign]="sign" [routerLink]="['/sign', sign.signName ]"></app-sign>
   </div>
 </div>
