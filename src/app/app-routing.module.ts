@@ -6,8 +6,8 @@ import {SorrowscopeComponent} from "./components/sorrowscope/sorrowscope.compone
 
 
 const routes: Routes = [
-  {path: '', component: SignListComponent},
-  {path: 'sign/:signName', component: SorrowscopeComponent},
+  {path: '', component: SignListComponent, data: {animation: 'isLeft'}},
+  {path: 'sign/:signName', component: SorrowscopeComponent, data: {animation: 'isRight'}},
 ];
 
 @NgModule({

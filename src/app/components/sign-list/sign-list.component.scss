@@ -7,7 +7,8 @@
   transition: .3s;
 
   &:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-1rem) rotate(-3deg);
+    transform-origin: 0% 100%;
 
     // Selects all '.card' siblings except the current, prev cards
     &~.card {
