@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {RouterOutlet} from "@angular/router";
+import {NavigationEnd, Router, RouterOutlet} from "@angular/router";
 import {fader, slider} from "./route-animations";
 // import { slider, transformer, fader, stepper } from './router-animations'
 
@@ -14,6 +14,15 @@ import {fader, slider} from "./route-animations";
 export class AppComponent implements OnInit{
   title = 'sorrowscopes';
   public viewportWidth: any;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
+  }
 
   ngOnInit(): void {
     this.viewportWidth = window.innerWidth;

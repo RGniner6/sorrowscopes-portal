@@ -60,10 +60,10 @@ function slideTo(direction) {
      ]),
      group([
        query(':leave', [
-         animate('900ms ease', style({ [direction]: '100%'}))
+         animate('600ms ease', style({ [direction]: '100%'}))
        ], optional),
        query(':enter', [
-         animate('900ms ease', style({ [direction]: '0%'}))
+         animate('600ms ease', style({ [direction]: '0%'}))
        ], optional),
 
      ]),
@@ -95,13 +95,13 @@ function slideTo(direction) {
      //Step 3
      group([
        query(':leave', [
-         animate('1s ease',
+         animate('.6s ease',
            style({
              transform: `translateY(${oppSign}100%)`
            }))
        ]),
        query(':enter', [
-         animate('1s ease',
+         animate('.6s ease',
            style({
              transform: 'translateY(0)'
            }))

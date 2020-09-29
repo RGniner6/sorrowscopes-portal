@@ -1,16 +1,33 @@
 .container {
-  height: 100vh;
+  min-height: 85vh;
   width: 100vw;
 }
 
 .card-list {
+  overflow-x: scroll;
   display: flex;
-  padding: 3rem;
+  padding: 5rem 2rem;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
     align-items: center;
   }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px -2px rgba(0,0,0,.25);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+  }
+
 }
 
 .card {
@@ -38,13 +55,26 @@
 
       // Selects all '.card' siblings except the current, prev cards
       &~.card {
-        transform: translateY(100px);
+        transform: translateY(80px);
       }
     }
 
     &:not(:first-child) {
-      margin-top: -100px;
+      margin-top: -80px;
     }
+  }
+}
+
+.header {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 3rem;
+  width: 100vw;
+  h1 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 20px;
   }
 }
 

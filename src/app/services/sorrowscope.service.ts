@@ -61,4 +61,12 @@ export class SorrowscopeService {
     return this.horoscopes.find(horoscope => horoscope.signName === signName)
   }
 
+  getSorrowscope(sign: Horoscope): String {
+    const randomNumber = Math.random()*100;
+    return randomNumber +'Gluten-free tofu listicle, art party jianbing tumeric helvetica fixie adaptogen direct' +
+      ' trade' +
+      ' lumbersexual af mlkshk hoodie hashtag. Ugh leggings waistcoat air plant cloud bread intelligentsia, fam' +
+      ' quinoa direct trade squid fingerstache.';
+  }
+
 }

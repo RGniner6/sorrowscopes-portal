@@ -10,13 +10,19 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SorrowscopeComponent implements OnInit {
   sign: Horoscope;
-  constructor(private sorrowscope: SorrowscopeService,
+  sorrowscope: String;
+  constructor(private sorrowscopeService: SorrowscopeService,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sign = this.sorrowscope.getHoroscope(
+    this.sign = this.sorrowscopeService.getHoroscope(
       this.route.snapshot.params['signName']
     )
+    this.loadNewSorrowscope()
+  }
+
+  loadNewSorrowscope() {
+    this.sorrowscope = this.sorrowscopeService.getSorrowscope(this.sign);
   }
 
 }
