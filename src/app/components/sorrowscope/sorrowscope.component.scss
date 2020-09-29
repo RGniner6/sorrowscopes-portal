@@ -4,8 +4,19 @@
   display: flex;
   justify-items: center;
   align-items: center;
+  justify-content: space-around;
+  //position: relative;
+}
+
+.card {
+  height: 90vh;
+  width: min(400px, 80vw);
+  display: flex;
+  justify-items: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
+  box-shadow: -1rem 0 3rem #000;
 }
 
 .content {
