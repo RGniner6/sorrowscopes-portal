@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Horoscope} from "../models/Horoscope";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
+import {Observable, throwError} from "rxjs";
+import {Sorrowscope} from "../models/sorrowscope";
+import {catchError, map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SorrowscopeService {
+  private apiURL = `${environment.apiServerUrl}`;
+  private prevSorrowscopes: Sorrowscope[] = [];
+  constructor(private http: HttpClient) {
+  }
+
   horoscopes: Horoscope[] = [{
     signName: 'Aries',
     dateRange: 'Mar 21 - Apr 19',
@@ -55,15 +65,25 @@ export class SorrowscopeService {
     },
   ];
 
-  constructor() {}
-
   getHoroscope(signName: string) {
     return this.horoscopes.find(horoscope => horoscope.signName === signName)
   }
 
-  getSorrowscope(sign: Horoscope): String {
-    const randomNumber = Math.random()*100;
-    return randomNumber +'Gluten-free tofu listicle, art party jianbing tumeric helvetica fixie adaptogen direct' +
+  getSorrowscope(sign: Horoscope): Observable<Sorrowscope> {
+    return this.http.get<Sorrowscope>(this.apiURL);
+      // .pipe(
+      // map( sorrowscope => this.prevSorrowscopes.push(sorrowscope))
+      // catchError(e => {
+      //   console.log(e);
+      //   return throwError(e);
+      // })
+  }
+
+  getPlaceHolderSorrowscope(): string {
+    const randomNumber = Math.floor(Math.random()*1000);
+    return randomNumber +' <-- Random number Gluten-free tofu listicle, art helvetica fixie' +
+      ' adaptogen' +
+      ' direct' +
       ' trade' +
       ' lumbersexual af mlkshk hoodie hashtag. Ugh leggings waistcoat air plant cloud bread intelligentsia, fam' +
       ' quinoa direct trade squid fingerstache.';

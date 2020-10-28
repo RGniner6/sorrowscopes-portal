@@ -50,7 +50,7 @@
   }
 
   @media screen and (max-width: 768px){
-    &:hover {
+    &:hover, &:active {
       transform: translateY(-1rem) rotate(3deg);
 
       // Selects all '.card' siblings except the current, prev cards

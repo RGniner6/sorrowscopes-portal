@@ -22,7 +22,8 @@ export class SorrowscopeComponent implements OnInit {
   }
 
   loadNewSorrowscope() {
-    this.sorrowscope = this.sorrowscopeService.getSorrowscope(this.sign);
+    this.sorrowscopeService.getSorrowscope(this.sign).subscribe( sorrowscope => this.sorrowscope = sorrowscope.sorrowscope);
+    // this.sorrowscope = this.sorrowscopeService.getPlaceHolderSorrowscope();
   }
 
 }
